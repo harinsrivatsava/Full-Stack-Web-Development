@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static boolean isArmstrong(int n) {
+        int sum = 0;
+        for(int idx=n;idx>0;idx=idx/10){
+            int digit = idx%10;
+            int cube = digit*digit*digit;
+            sum+=cube;
+        }
+        if(sum==n) return true;
+        else return false;
+    }
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int tests = scn.nextInt();
+        for(int i=1;i<=tests;i++){
+            int n = scn.nextInt();
+            boolean result = isArmstrong(n);
+            System.out.println(result);
+        }
+    }
+}
