@@ -1,0 +1,20 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int m = scn.nextInt();
+        int count = 0;
+        int a = m;
+        while(a>0 && m>0){
+        for(int j=count;j>0;j--){
+                System.out.print("\t");
+            }
+        for(int i=m;i>0;i--){
+            System.out.print("*\t");
+        }
+            count++;
+            a--;
+            m-=2;
+            System.out.println();
+    }}
+}
