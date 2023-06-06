@@ -1,0 +1,17 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        char j='Z';
+        char k='z';
+        for(int i=1;i<=52;i++){
+            if(i%2==1){
+                System.out.print(j+" ");
+                j--;
+            }
+            else{
+                System.out.print(k+" ");
+                k--;
+            }
+        }
+    }
+}
