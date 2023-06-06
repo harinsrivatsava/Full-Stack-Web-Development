@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt();
+        int [] array1 = new int [N];
+        int [] array2 = new int [N];
+        for(int i=0;i<N;i++){
+            array1[i] = scn.nextInt();
+        }
+        for(int k=0;k<N;k++){
+            array2[k] = scn.nextInt();
+        }
+        for(int j=0;j<N;j++){
+            if(j%2==0){
+                System.out.print(array1[j]+" ");
+            }
+            else{
+                System.out.print(array2[j]+" ");
+            }
+        }
+    }
+}
