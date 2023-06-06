@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+            int n = scn.nextInt();
+            int k = scn.nextInt();
+            int m = scn.nextInt();
+            int l = 0;
+            while ((n-(l*k))>=m){
+                System.out.print((n-(l*k))+" ");
+                l+=3;
+            }
+        }
+    }
