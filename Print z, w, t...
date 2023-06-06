@@ -1,0 +1,10 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        char c = 'z';
+        while(c>='d'){
+            System.out.print(c+" ");
+            c-=3;
+        }
+    }
+}
