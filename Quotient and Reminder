@@ -1,0 +1,13 @@
+import java. util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int a = scn.nextInt();
+        int b = scn.nextInt();
+        QR(a,b);
+    }
+    public static void QR(int a, int b){
+        System.out.print(a/b + " ");
+        System.out.print(a%b);
+    }
+}
