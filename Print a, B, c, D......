@@ -1,0 +1,17 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        char j = 'a';
+        char k = 'B';
+        for(int i=1;i<=26;i++){
+            if(i%2==1){
+                System.out.println(j);
+                j+=2;
+            }
+            else{
+                System.out.println(k);
+                k+=2;
+            }
+        }
+    }
+}
