@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt();
+        int m1 = 0;
+        int m2 = 0;
+        for(int i=1;i<=T;i++){
+            int x = scn.nextInt();
+            int y = scn.nextInt();
+            if(x<y){
+                for(int j=1;j<=x;j++){
+                    if(x%j==0 && y%j==0){
+                        m1 = j;
+                    }
+                }
+                System.out.println(m1);
+            }
+            else{
+                for(int k=1;k<=y;k++){
+                    if(x%k==0 && y%k==0){
+                        m2 = k;
+                    }
+                }
+                System.out.println(m2);
+            }
+        }
+    }
+}
