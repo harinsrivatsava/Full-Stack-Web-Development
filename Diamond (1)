@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt();
+        int count = 0;
+        int count1 = 0;
+        for (int i=1;i<=(2*N-1);i++){
+            for(int j=i;j<=(N-1);j++){
+                System.out.print(" ");
+            }
+            if(count<N){
+            for(int k=1;k<=(2*i-1) && k<=(2*N-1);k++){
+            System.out.print("*");
+            }
+            count++;
+            }if(count1<N){
+            System.out.println();
+                count1++;
+        }
+        }
+        for (int l=N-2;l>=0;l--) {
+            for (int m=1;m<N-l;m++) {
+                System.out.print(" ");
+            }
+            for (int n=1;n<=2*l+1;n++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        }
+        
+    }
