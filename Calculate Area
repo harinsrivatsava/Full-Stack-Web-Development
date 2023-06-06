@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt();
+        for(int i=1;i<=T;i++){
+            int l = scn.nextInt();
+            int b = scn.nextInt();
+            Area(l,b);
+        }
+    }
+    public static void Area(int l, int b){
+        System.out.println(l*b);
+    }
+}
