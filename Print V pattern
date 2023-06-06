@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int m = scn.nextInt();
+        int count = 0;
+        int n = m/2;
+        for(int i=1;i<=(m-3);i++){
+            int k=1;
+            for(;k<i;k++){
+                System.out.print("\t");
+            }count++;
+            if(count<=(m/2)){
+            System.out.print("*\t");
+            }
+            for(int j=m-i-k;j>0;j--){
+                System.out.print("\t");
+            }
+            if(count<=(m/2)){
+            System.out.print("*");
+            }
+            if(count<(m/2)){
+            System.out.println();            
+        }}
+        System.out.println();
+        for(int l=1;l<=n;l++){
+            System.out.print("\t");
+        }
+        System.out.print("*");
+    }
+}
