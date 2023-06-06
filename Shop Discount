@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int q = scn.nextInt();
+        int TC = q*100;
+        if (TC > 1000){
+            System.out.println(TC*90/100);
+        }
+        else{
+            System.out.println(TC);
+        }
+    }
+}
