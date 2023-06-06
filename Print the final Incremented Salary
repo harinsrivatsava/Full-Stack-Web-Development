@@ -1,0 +1,25 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int a = scn.nextInt();
+        int s = scn.nextInt();
+        int e = scn.nextInt();
+        if (a>60 && s>20000 && e>20){
+            System.out.println(s+5000);
+        }
+        else{
+            if(a>40 && s>15000 && e>10){
+                System.out.println(s+2000);
+            }
+            else{
+                if(a>30 && s>10000 && e>5){
+                    System.out.println(s+1000);
+                }
+                else{
+                    System.out.println(s+500);
+                }
+            }
+        }
+    }
+}
