@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt();
+        int y = 0;
+        int z = 0;
+        int count =0;
+        for(int i=1;i<=T;i++){
+            int n = scn.nextInt();
+            y = n%1000;
+            n = n/1000;
+            z = n;
+            while(z>0){
+                z = z/10;
+                count++;
+            }
+            System.out.println((int)((y*(Math.pow(10,count)))+n));
+            count = 0;
+        }
+    }
+}
