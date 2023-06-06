@@ -1,0 +1,13 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt();
+        int m = 1;
+        for (int i=1;i<=N;i++){
+            int prod = scn.nextInt();
+            m*=prod;
+            System.out.print(m+" ");
+        }
+    }
+}
