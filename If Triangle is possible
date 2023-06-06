@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int A = scn.nextInt();
+        int B = scn.nextInt();
+        int C = scn.nextInt();
+        Triangle(A,B,C);
+    }
+    public static void Triangle(int A, int B, int C){
+        if(((A+B)>C)&&((C+B)>A)&&((A+C)>A)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+    }
+}
