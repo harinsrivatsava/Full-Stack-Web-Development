@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int S = scn.nextInt();
+        int Y = scn.nextInt();
+        if (Y>5){
+            System.out.println(S*5/100);
+        }
+        else{
+            System.out.println(0);
+        }
+        
+    }
+}
