@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+        for(int i=1;i<=n;i++){
+            for(int l=n-i;l>0;l--){
+            System.out.print("   ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print(k*j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
