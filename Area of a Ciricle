@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int dia = scn.nextInt();
+        double radius = dia/2;
+        double a = 22*radius*radius/7;
+        int area = (int)a;
+        System.out.println(area);
+    }
+}
