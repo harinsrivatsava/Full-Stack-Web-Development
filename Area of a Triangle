@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        Double X = scn.nextDouble();
+        Double Y = scn.nextDouble();
+        Double Area = X*Y/2;
+        System.out.println(Area);
+    }
+}
