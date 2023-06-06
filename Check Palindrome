@@ -2,16 +2,23 @@ import java.util.Scanner;
 public class Solution{
     public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int count = 0;
-        int x = n%100;
-        int y = n/100;
-        int s = y;
-        while(s>0){
-            s = s/10;
-            count++;
+        int t = scn.nextInt();
+        int x = 0;
+        int y = 0;
+        for(int i=1;i<=t;i++){
+            int n = scn.nextInt();
+            x = n;
+            while(n>0){
+                y = y*10+(n%10);
+                n = n/10;
+            }
+            if(x==y){
+                System.out.println("YES");
+            }
+            else{
+                System.out.println("NO");
+            }
+            y = 0;
         }
-        int z = ((int)(x*Math.pow(10,count)))+y;
-        System.out.println(z);
     }
 }
