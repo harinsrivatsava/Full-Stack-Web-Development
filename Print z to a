@@ -1,0 +1,9 @@
+public class Solution{
+    public static void main(String[] args){
+        char n = 'z';
+        while(n>='a'){
+            System.out.print(n+" ");
+            n--;
+        }
+    }
+}
