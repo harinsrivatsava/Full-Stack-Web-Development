@@ -1,0 +1,13 @@
+public class Solution{
+    public static void main(String[] args){
+        char n = 'z';
+        char m = 'Y';
+        int i = 13;
+        while(i>0){
+            System.out.print(n+" "+m+" ");
+            n-=2;
+            m-=2;
+            i--;
+        }
+    }
+}
