@@ -1,0 +1,13 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        char ch = scn.next().charAt(0);
+        if ('a'<=ch && ch<='z'){
+            System.out.println("Char is Lowercase");
+        }
+        else if('A'<=ch && ch<='Z'){
+            System.out.println("Char is Uppercase");
+        }
+    }
+}
