@@ -1,0 +1,15 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        Double f = scn.nextDouble();
+        Double s = scn.nextDouble();
+        Double t = scn.nextDouble();
+        Double F = scn.nextDouble();
+        Double ff = scn.nextDouble();
+        Double Total = f+s+t+F+ff;
+        Double Percent = Total*100/500;
+        System.out.println(Total);
+        System.out.println(Percent);
+    }
+}
