@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int x = scn.nextInt();
+        int y = scn.nextInt();
+        int n = x;
+        int m = y;
+        swapVariables(x,y);
+        System.out.println("x = "+m);
+        System.out.println("y = "+n);
+    }
+    public static void swapVariables(int x, int y){
+        int c;
+        c = x;
+        System.out.println("c = "+c);
+        x = y;
+        System.out.println("x = "+x);
+        y = c;
+        System.out.println("y = "+y);
+    }
+}
