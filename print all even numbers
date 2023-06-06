@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt();
+        for(int i=1;i<=T;i++){
+            int x = scn.nextInt();
+            int y = scn.nextInt();
+            even(x,y);
+            System.out.println();
+        }
+    }
+    public static void even(int x, int y){
+        if(x<y){
+            for(int j=x;j<=y;j++){
+                if(j%2==0){
+                    System.out.print(j+" ");
+                }
+            }
+        }else{
+            for(int k=y;k<=x;k++){
+                if(k%2==0){
+                    System.out.print(k+" ");
+                }
+            }
+        }
+    }
+}
