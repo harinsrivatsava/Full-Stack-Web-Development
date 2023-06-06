@@ -1,0 +1,14 @@
+import java.util.*;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int m = 0;
+        for(int i = 1; i <= n; i++){
+            m += i;
+        }
+        int avg = m / n;
+        System.out.println(m);
+        System.out.println(avg);
+    }
+}
