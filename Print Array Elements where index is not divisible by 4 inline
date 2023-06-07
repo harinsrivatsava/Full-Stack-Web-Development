@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int [] div4 = new int [n];
+        for(int i=0;i<n;i++){
+            div4[i] = scn.nextInt();
+            if(i%4 != 0){
+                System.out.print(div4[i]+" ");
+            }
+        }
+    }
+}
