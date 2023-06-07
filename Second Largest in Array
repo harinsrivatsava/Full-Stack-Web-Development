@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt();
+        int [] Arr = new int [N];
+        for(int i=0;i<N;i++){
+            Arr[i] = scn.nextInt();
+        }
+        System.out.println(second_largest(Arr));
+    }
+    public static int second_largest(int [] A){
+        int max = 0;
+        int max2 = 0;
+        if(A.length>2){
+        for(int i=0;i<A.length;i++){
+            if(A[i]>max){
+                max = A[i];
+            }
+        }
+        for(int j=0;j<A.length;j++){
+            if(A[j] != max){
+                if(A[j]>max2){
+                    max2 = A[j];
+                }
+            }
+        }
+        return max2;
+    }
+    else{
+        return (int)(Math.pow(-2,31));
+    }}
+}
