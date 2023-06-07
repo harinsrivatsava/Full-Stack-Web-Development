@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt();
+        char [] array = new char [N];
+        for(int i=0;i<N;i++){
+            array[i] = scn.next().charAt(0);
+        }
+        char n = vowel(array);
+        for(int j=0;j<N;j++){
+            if(array[j]==n){
+                System.out.println(j);
+                break;
+            }
+        }
+    }
+    public static char vowel(char [] A){
+        for(int i=0;i<A.length;i++){
+            if(A[i]=='a' || A[i]=='e' || A[i]=='i' || A[i]=='o' || A[i]=='u'){
+                return A[i];
+            }
+        }
+        return 'n';
+    }
+}
