@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] array = new int [n];
+        for (int i = 0; i < n; i++){
+            array[i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        abs_diff(array,k);
+    }
+    public static void abs_diff(int [] A, int n){
+        for (int i = 0; i < A.length; i++){
+            for(int j = 0; j < A.length; j++){
+                if(i != j && j > i){
+                if((A[j] - A[i]) == n || (A[j] - A[i]) == -n){
+                    System.out.println(A[i] + " " + A[j]);
+                }}
+            }
+        }
+    }
+}
