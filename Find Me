@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] arr1 = new int [n];
+        for(int i = 0; i < n; i++){
+            arr1[i] = scn.nextInt();
+        }
+        int m = scn.nextInt();
+        int [] arr2 = new int [m];
+        for(int i = 0; i < m; i++){
+            arr2[i] = scn.nextInt();
+        }
+        abs_values(arr1, arr2);
+    }
+    public static void abs_values(int [] A, int [] B){
+        int [] C = new int [A.length];
+        for(int i = 0; i < A.length; i++){
+            if(A[i] < 0){
+                C[i] = -A[i];
+            }
+            else{
+                C[i] = A[i];
+            }
+        }
+        int [] D = new int [B.length];
+        for(int i = 0; i < B.length; i++){
+            if(B[i] < 0){
+                D[i] = -B[i];
+            }
+            else{
+                D[i] = B[i];
+            }
+        }
+        for(int i = 0; i < A.length; i++){
+            int count = 0;
+            for(int j = 0; j < B.length; j++){
+                if(C[i] == D[j]){
+                    count++;
+                }
+            }
+            if(count <= 2 && count > 0){
+                System.out.print(A[i] + " ");
+            }
+        }
+    }
+}
