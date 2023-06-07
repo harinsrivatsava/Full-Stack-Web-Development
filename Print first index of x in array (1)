@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int [] array = new int [n];
+        int [] count = new int [n];
+        int count1 = 0;
+        int count2 = 0;
+        for (int i=0;i<n;i++){
+            array[i] = scn.nextInt();
+        }
+        int m = scn.nextInt();
+        for(int j=0;j<n;j++){
+            if(m == array[j]){
+                count[j] = m;
+                n = j;
+                System.out.print(j);
+                count2++;
+            }
+            else{
+                count1++;
+            }
+        }
+        if((count1 > 0) && (count2 == 0)){
+            System.out.println(-1);
+        }
+    }
+}
