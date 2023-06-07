@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] arr = new int [N];
+        for (int i = 0; i < N; i++){
+            arr[i] = scn.nextInt();
+        }
+        int X = scn.nextInt();
+        large_number(arr,X);
+    }
+    public static void large_number(int [] A, int x){
+        A[A.length-1] = A[A.length-1] + x;
+        if(A[A.length-1] > 9){
+            A[A.length-1] = A[A.length-1] % 10;
+            A[A.length - 2] = A[A.length - 2] + 1;
+        }
+        for(int i = 0; i < A.length; i++){
+            System.out.print(A[i] + " ");
+        }
+    }
+}
