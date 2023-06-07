@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] arr = new int [n];
+        for (int i = 0; i<n; i++){
+            arr[i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        Update(arr,k);
+    }
+    public static void Update(int [] A, int k){
+        for(int i = 0; i<A.length; i++){
+            if(A[i]%2 == 0 && A[i] > k){
+                A[i] = A[i]/2;
+            }
+            if(A[i]%2 == 1 && A[i] > k){
+                A[i] = A[i] + k;
+            }
+            System.out.print(A[i] + " ");
+        }
+    }
+}
