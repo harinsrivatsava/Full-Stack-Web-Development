@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] M = new int [N];
+        int prod = 1;
+        int count = 0;
+        int [] arr = new int [N];
+        for (int i = 0; i < N; i++){
+            arr[i] = scn.nextInt();
+        }
+        for (int j = 0; j < N; j++){
+            if (arr[j] > 0){
+                M[j] = arr[j];
+            }
+            else{
+                M[j] = -arr[j];
+            }
+        }
+        Arrays.sort(M);
+        Arrays.sort(arr);
+        for (int l = N-3; l < N; l++){
+            if((arr[l] == M[N-3]) || (arr[l] == M[N-2]) || (arr[l] == M[N-3])){
+                    break;
+                }
+            else{
+                count++;
+            }
+        }
+        if (N == 3){
+            for (int k = 0; k < 3; k++){
+                prod = prod * arr[k];
+            }
+        }
+        else{
+            if ((M[N-1] != 0) || (M[N-2] != 0) || (M[N-3] != 0)){
+            prod = prod * M[N-1] * M[N-2] * M[N-3];
+            }
+            else if ((M[N-1] == 0) || (M[N-2] != 0) || (M[N-3] != 0)){
+            prod = prod * M[N-2] * M[N-3];
+            }
+            else if ((M[N-1] != 0) || (M[N-2] == 0) || (M[N-3] != 0)){
+            prod = prod * M[N-1] * M[N-3];
+            }
+            else if ((M[N-1] != 0) || (M[N-2] != 0) || (M[N-3] == 0)){
+            prod = prod * M[N-2] * M[N-1];
+            }
+        }
+        System.out.println((int)((Math.pow(-1,count))*prod));
+    }
+}
