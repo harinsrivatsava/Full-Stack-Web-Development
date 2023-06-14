@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        Integer [] num = new Integer [N];
+        for (int i = 0; i < N; i++){
+            num [i] = scn.nextInt();
+        }
+        int count = 0;
+        for (int j = 0; j < N; j++){
+            if (num [j] % 2 == 0){
+                count++;
+            }
+        }
+        int [] even = new int [count];
+        int t = 0;
+        for (int k = 0; k < N; k++){
+            if (num [k] % 2 == 0 && t < count){
+                even [t] = num [k];
+                t++;
+            }
+        }
+        int [] odd = new int [N - count];
+        int u = 0;
+        for (int l = 0; l < N; l++){
+            if (num [l] % 2 != 0 && u < (N - count)){
+                odd [u] = num [l];
+                u++;
+            }
+        }
+        Arrays.sort(odd);
+        if (count > 0){
+        for (int m = 0; m < count; m++){
+            System.out.print(even [m] + " ");
+        }}
+        if ((N - count) > 0){
+        for (int n = 0; n < (N-count); n++){
+            System.out.print(odd [n] + " ");
+        }}
+    }
+}
