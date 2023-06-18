@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] arr = new int [N];
+        for (int i = 0; i < N; i++){
+            arr[i] = scn.nextInt();
+        }
+        int max = 0;
+        int max1 = 0;
+        for (int i = 0; i < N; i++){
+            max = Math.max(max,arr[i]);
+            if(max == arr[i])
+                max1 = i;
+        }
+        System.out.println(max1);
+    }
+}
