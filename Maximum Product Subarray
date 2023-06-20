@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] A = new int [N];
+        int prod = 1;
+        int max = 0;
+        for (int k = 0; k < N; k++){
+            A [k] = scn.nextInt();
+        }
+        for (int j = 0; j < N; j++){
+            for (int k = j; k < N; k++){
+                for (int l = j; l <= k; l++){
+                    prod *= A[l];
+                }
+                if (prod > 0)
+                max = Math.max(max,prod);
+                prod = 1;
+            } 
+        }
+        System.out.println(max);
+    }
+}
