@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] arr = new int [N];
+        for (int i = 0; i < N; i++){
+            arr [i] = scn.nextInt();
+        }
+        int l = scn.nextInt();
+        int r = scn.nextInt();
+        if (l < r){
+            for (int j = 0; j < l; j++){
+                System.out.println(arr [j]);
+            }
+            for (int k = r; k >= l; k--){
+                System.out.println(arr [k]);
+            }
+            for (int m = r + 1; m < N; m++){
+                System.out.println(arr [m]);
+            }
+        }
+        else {
+            for (int j = 0; j < r; j++){
+                System.out.println(arr [j]);
+            }
+            for (int k = l; k >= r; k--){
+                System.out.println(arr [k]);
+            }
+            for (int m = l + 1; m < N; m++){
+                System.out.println(arr [m]);
+            }
+        }
+    }
+}
