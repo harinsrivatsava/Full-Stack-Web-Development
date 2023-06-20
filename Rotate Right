@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int [] array = new int [N];
+        for (int i = 0; i < N; i++){
+            array [i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        for (int j = (N - k); j < N; j++){
+            System.out.print (array [j] + " ");
+        }
+        for (int l = 0; l < (N - k); l++){
+            System.out.print (array [l] + " ");
+        }
+    }
+}
