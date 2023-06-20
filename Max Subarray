@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Solution{
+    public static void main (String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            A [i] = scn.nextInt();
+        }
+        int ans = Integer.MIN_VALUE;
+        int sum = 0;   // current sum that needs to be maximized
+        
+        for (int i = 0; i < n; i++){
+            if (sum < 0){
+                sum = A[i];
+            }
+            else{
+                sum += A[i];
+            }
+            ans = Math.max(ans,sum);
+        }
+        System.out.println(ans);
+    }
+}
