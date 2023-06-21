@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Solution{
+    public static void main(String[] args){
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        int k = scn.nextInt();
+        int n = N;
+        int count = 0;
+        while (n > 0){
+            n = n / 10;
+            count++;
+        }
+        int [] A = new int [count];
+        for (int j = 0; j < count; j++){
+            A [j] = N % 10;
+            N = N / 10;
+        }
+        int [] B = new int [count];
+        int r = 0;
+        for (int s = (count - 1); s >= 0; s--){
+            B [r] = A [s];
+            r++;
+        }
+        if (k >= 0){
+            for (int l = k; l < count; l++){
+                System.out.print(B[l]);
+            }
+            for (int m = 0; m < k; m++){
+                System.out.print(B[m]);
+            }
+        }
+        else{
+            for (int p = (count + k); p < count; p++){
+                System.out.print(B[p]);
+            }
+            for (int q = 0; q < (count + k); q++){
+                System.out.print(B[q]);
+            }
+        }
+    }
+}
