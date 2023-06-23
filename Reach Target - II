@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            A [i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        ReachTarget (A, k);
+    }
+    public static void ReachTarget (int [] A, int k){
+        int i = 0, j = (A.length - 1), sum = 0;
+        while (i < j) {
+                sum = A[i] + A[j];
+                if (sum == k){
+                    System.out.print (i + " " + j);
+                    i++;
+                    j--;
+                    if (A [i] == A[i - 1])
+                        i++;
+                    if (A [j + 1] == A [j])
+                        j--;
+                    System.out.println ();
+                }
+                else {
+                    j--;
+                }
+           }
+    }
+}
