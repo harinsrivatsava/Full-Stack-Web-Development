@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            A [i] = scn.nextInt();
+        }
+        int [] freq = new int [10];
+        for (int j = 0; j < n; j++){
+            int ele = A [j];
+            freq [ele]++;
+        }
+        int maxFreq = Integer.MIN_VALUE;
+        int maxFreqVal = 100;
+        
+        for (int i = 0; i < 10; i++){
+            if (freq [i] > maxFreq){
+                maxFreq = freq [i];
+                maxFreqVal = i;
+            }
+        }
+        System.out.println (maxFreqVal);
+    }
+}
