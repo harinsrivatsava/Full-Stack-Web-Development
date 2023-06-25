@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] arr = new int [n];
+        for (int i = 0; i < n; i++){
+            arr [i] = scn.nextInt();
+        }
+        int [] freq = new int [10];
+        for (int j = 0; j < n; j++){
+            int ele = arr [j];
+            freq [ele]++;
+        }
+        int count = 0;
+        for (int k = 0; k < 10; k++){
+            if (freq [k] % 2 == 1){
+                System.out.print (k);
+                count++;
+            }
+        }
+        if (count == 0){
+            System.out.print ("There is no odd occurring element");
+        }
+    }
+}
