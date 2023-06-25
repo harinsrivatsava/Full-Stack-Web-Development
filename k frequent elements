@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] nums = new int [n];
+        for (int i = 0; i < n; i++){
+            nums [i] = scn.nextInt();
+        }
+        int k = scn.nextInt();
+        int [] freq = new int [10];
+        for (int j = 0; j < n; j++){
+            int ele = nums [j];
+            freq [ele]++;
+        }
+        int [] freq1 = new int [10];
+        for (int j = 0; j < 10; j++){
+            freq1 [j] = freq [j];
+        }
+        Arrays.sort (freq1);
+        int count = 0;
+        for (int l = 9; l > (9 - k); l--){
+            for (int m = n; m > 0; m--){
+                if (freq [m] == freq1 [l] && count < k){
+                    System.out.print (m + " ");
+                    count++;
+                }
+            }
+        }
+    }
+}
