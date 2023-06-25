@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int count = 0, m = n;
+        while (m > 0){
+            m = m / 10;
+            count++;
+        }
+        int [] num = new int [count];
+        for (int i = (count - 1); i >= 0; i--){
+            num [i] = n % 10;
+            n = n / 10;
+        }
+        int [] freq = new int [10];
+        for (int j = 0; j < count; j++){
+            int ele = num [j];
+            freq [ele]++;
+        }
+        int MaxFreq = Integer.MIN_VALUE;
+        int MaxFreqDigit = 0;
+        for (int k = 0; k < num.length; k++){
+            if (freq [k] > MaxFreq){
+                MaxFreq = freq [k];
+                MaxFreqDigit = k;
+            }
+        }
+        System.out.println (MaxFreqDigit);
+    }
+}
