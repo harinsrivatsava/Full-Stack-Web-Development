@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int r = scn.nextInt();
+        int c = scn.nextInt();
+        int [][] M = new int [r][c];
+        for (int i = 0; i < r; i++){
+            for (int j = 0; j < c; j++){
+                M [i][j] = scn.nextInt();
+            }
+        }
+        for (int k = 0; k < r; k++){
+            for (int l = 0; l < c; l++){
+                System.out.print (M [k][l] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
