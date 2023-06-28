@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Solution {
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] arr = new int [n];
+        for (int i = 0; i < n; i++){
+            arr [i] = scn.nextInt();
+        }
+        int p = scn.nextInt();
+        int q = scn.nextInt();
+        int [][] A = new int [p][q];
+        int s = 0;
+        for (int j = 0; j < p; j++){
+            for (int k = 0; k < q; k++){
+                A [j][k] = arr [s];
+                s++;
+            }
+        }
+        for (int l = 0; l < p; l++){
+            for (int m = 0; m < q; m++){
+                System.out.print (A [l][m] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
