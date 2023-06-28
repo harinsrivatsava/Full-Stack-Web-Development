@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [][] A = new int [n][n];
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                A [i][j] = scn.nextInt();
+            }
+        }
+        rotate (A);
+        printMatrix (A);
+    }
+    public static void rotate (int [][] A){
+        transpose (A);
+        for (int [] d : A){
+            reverse1D (d);
+        }
+    }
+    public static void transpose (int [][] A){
+        int n = A.length;
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                if (i < j){
+                    int temp = A [i][j];
+                    A [i][j] = A [j][i];
+                    A [j][i] = temp;
+                }
+            }
+        }
+    }
+    public static void reverse1D (int [] d){
+        int i = 0;
+        int j = d.length - 1;
+        while (i < j){
+            int temp = d [i];
+            d [i] = d [j];
+            d [j] = temp;
+            i++;
+            j--;
+        }
+    }
+    public static void printMatrix (int [][] A){
+        for (int [] d : A){
+            for (int ele : d){
+                System.out.print (ele + " ");
+            }
+            System.out.println();
+        }
+    }
+}
