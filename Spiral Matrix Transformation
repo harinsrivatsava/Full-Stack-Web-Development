@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int m = scn.nextInt();
+        int n = scn.nextInt();
+        int [][] A = new int [m][n];
+        for (int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++){
+                A [i][j] = scn.nextInt();
+            }
+        }
+        int minR = 0, minC = 0, maxC = n - 1, maxR = m - 1;
+        int t = m * n;
+        int x = A [0][0];
+        int c = 0;  // total elements printed till now
+        while (c < t){
+            for (int j = minC; j <= maxC && c < t; j++){
+                if (c != 0){
+                int y = A [minR][j];
+                A [minR][j] = x;
+                x = y;
+                }
+                c++;
+            }
+            minR++;
+            for (int i = minR; i <= maxR && c < t; i++){
+                int y = A [i][maxC];
+                A [i][maxC] = x;
+                x = y;
+                c++;
+            }
+            maxC--;
+            for (int j = maxC; j >= minC && c < t; j--){
+                int y = A [maxR][j];
+                A [maxR][j] = x;
+                x = y;
+                c++;
+            }
+            maxR--;
+            for (int i = maxR; i >= minR && c < t; i--){
+                int y = A [i][minC];
+                A [i][minC] = x;
+                x = y;
+                c++;
+            }
+            minC++;
+        }
+        A [0][0] = x;
+        for (int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++){
+                System.out.print (A [i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
