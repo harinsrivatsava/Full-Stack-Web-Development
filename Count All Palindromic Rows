@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Solution {
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int m = scn.nextInt();
+        int n = scn.nextInt();
+        int [][] A = new int [m][n];
+        for (int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++){
+                A [i][j] = scn.nextInt();
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < m; i++){
+            boolean ans = true;
+            for (int k = 0, l = (n - 1); k < n && l >= 0; k++, l--){
+                if (A[i][k] != A[i][l]){
+                    ans = false;
+                }
+            }
+            if (ans){
+                count++;
+            }
+        }
+        System.out.println (count);
+    }
+}
