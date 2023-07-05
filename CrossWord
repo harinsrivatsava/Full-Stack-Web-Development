@@ -1,0 +1,91 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        char [][] C = new char [n][n];
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                C [i][j] = scn.next().charAt(0);
+            }
+        }
+        String word = scn.next();
+        
+        boolean ans = crossword(C, word);
+        System.out.println (ans);
+    }
+    public static boolean crossword (char [][] A, String word){
+        int n = A.length;
+        char firstCh = word.charAt(0);
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                if (A [i][j] == firstCh){
+                    boolean dirAns = searchIn4Dir(A, word, i, j);
+                    if (dirAns){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public static boolean searchIn4Dir (char [][] A, String word, int i, int j){
+        if (dirOne (A, word, i, j) || dirTwo (A, word, i, j) || dirThree (A, word, i, j) || dirFour (A, word, i, j)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean dirOne(char [][] A, String word, int i, int j){
+        for (int k = 0; k < word.length(); k++){
+            if (j >= A.length){
+                return false;
+            }
+            else if (word.charAt(k) != A[i][j]){
+                return false;
+            }
+            j++;
+        }
+        return true;
+    }
+    public static boolean dirTwo(char [][] A, String word, int i, int j){
+        for (int k = 0; k < word.length(); k++){
+            if (i >= A.length){
+                return false;
+            }
+            else if (word.charAt(k) != A[i][j]){
+                return false;
+            }
+            i++;
+        }
+        return true;
+    }
+    public static boolean dirThree(char [][] A, String word, int i, int j){
+        for (int k = 0; k < word.length(); k++){
+            if (i >= A.length || j >= A.length){
+                return false;
+            }
+            else if (word.charAt(k) != A[i][j]){
+                return false;
+            }
+            i++;
+            j++;
+        }
+        return true;
+    }
+    public static boolean dirFour(char [][] A, String word, int i, int j){
+        for (int k = 0; k < word.length(); k++){
+            if (i < 0 || j < 0){
+                return false;
+            }
+            else if (word.charAt(k) != A[i][j]){
+                return false;
+            }
+            i--;
+            j--;
+        }
+        return true;
+    }
+}
