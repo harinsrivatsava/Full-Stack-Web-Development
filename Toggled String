@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Solution {
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S1 = scn.next();
+        String S2 = scn.next();
+        if (S1.length() != S2.length()){
+            System.out.println ("false");
+            return;
+        }
+        for (int i = 0; i < S1.length(); i++){
+            if ((S1.charAt(i) == S2.charAt(i)) && ((S1.charAt(i) + 32) != S2.charAt(i)) && ((S2.charAt(i) + 32) != (S1.charAt(i)))){
+                System.out.println ("false");
+                return;
+            }
+        }
+        System.out.println ("true");
+    }
+}
