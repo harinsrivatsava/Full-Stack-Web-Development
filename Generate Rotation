@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.next();
+        int j = 0, k = S.length();
+        int c = k;
+        for (int i = 0; i < S.length(); i++){
+            for(; k < S.length(); k++){
+                System.out.print (S.charAt(k));
+            }
+            for (;j < c; j++){
+                System.out.print (S.charAt(j));
+            }
+            c--;
+            k = c;
+            j = 0;
+            System.out.println();
+        }
+    }
+}
