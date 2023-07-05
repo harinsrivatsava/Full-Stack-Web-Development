@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        int k = scn.nextInt();
+        int m = scn.nextInt();
+        int n = scn.nextInt();
+        int [] A = new int [k];
+        for (int i = 0; i < k; i++){
+            A [i] = scn.nextInt();
+        }
+        int [][] mat = new int [m][n];
+        int minR = 0, minC = 0, maxR = (m - 1), maxC = (n - 1);
+        int c = 0;
+        int t = m * n;
+        while (c < t){
+            for (int i = minC; i <= maxC && c < t; i++){
+                mat [minR][i] = A [c];
+                c++;
+            }
+            minR++;
+            for (int i = minR; i <= maxR && c < t; i++){
+                mat [i][maxC] = A [c];
+                c++;
+            }
+            maxC--;
+            for (int i = maxC; i >= minC && c < t; i--){
+                mat [maxR][i] = A [c];
+                c++;
+            }
+            maxR--;
+            for (int i = maxR; i >= minR && c < t; i--){
+                mat [i][minC] = A [c];
+                c++;
+            }
+            minC++;
+        }
+        for (int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++){
+                System.out.print (mat [i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
