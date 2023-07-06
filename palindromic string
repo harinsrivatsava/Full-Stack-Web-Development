@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.nextLine();
+        String T = "";
+        for (int i = 0; i < S.length(); i++){
+            char ch = S.charAt(i);
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')){
+                if ((ch >= 'A' && ch <= 'Z')){
+                    ch = (char) (ch - 'A' + 'a');
+                }
+                T += ch;
+            }
+        }
+        int i = 0, j = T.length() - 1;
+        if (T.charAt(i) != T.charAt(j)){
+                System.out.println ("false");
+                return;
+            }
+        while (i < j){
+            if (T.charAt(i) != T.charAt(j)){
+                System.out.println ("false");
+                return;
+            }
+            i++;
+            j--;
+        }
+        System.out.println ("true");
+    }
+}
