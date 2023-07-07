@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String s = scn.nextLine();
+        int n = s.length();
+        int ans = 0;
+        for (int k = 0; k <= (n - 1); k++){
+        for (int i = k; i <= (n - 1); i++){
+            String S1 = "";
+            for (int j = k; j <= i; j++){
+                S1 += s.charAt (j);
+            }
+            ans += Integer.parseInt(S1);
+        }}
+        System.out.println (ans);
+    }
+}
