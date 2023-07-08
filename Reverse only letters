@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.next();
+        int n = S.length();
+        String S1 = "";
+        for (int i = 0; i < n; i++){
+            if (((int)(S.charAt(i)) >= 65 && (int)(S.charAt(i)) <= 90) || ((int)(S.charAt(i)) >= 97 && (int)(S.charAt(i)) <= 122)){
+                S1 += S.charAt(i);
+            }
+        }
+        int l = S1.length() - 1;
+        for (int i = 0; i < n; i++){
+            if (((int)(S.charAt(i)) >= 65 && (int)(S.charAt(i)) <= 90) || ((int)(S.charAt(i)) >= 97 && (int)(S.charAt(i)) <= 122)){
+                System.out.print(S1.charAt(l));
+                l--;
+            }
+            else{
+                System.out.print (S.charAt(i));
+            }
+        }
+    }
+}
