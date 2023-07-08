@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.next();
+        int n = S.length();
+        int cur = 1, prev = 0, ans = 0;
+        for (int i = 1; i < n; i++){
+            if (S.charAt (i) == S.charAt (i -1)){
+                cur++;
+            }
+            else{
+                ans += Math.min(prev, cur);
+                prev = cur;
+                cur = 1;
+            }
+        }
+        ans += Math.min(prev, cur);
+        System.out.println (ans);
+    }
+}
