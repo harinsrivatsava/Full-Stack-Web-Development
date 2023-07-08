@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Solution {
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.next();
+        int max = 0;
+        int n = S.length();
+        int count = 0;
+        for (int i = 0; i < n; i++){
+            if ((int)(S.charAt(i)) == 49){
+                count++;
+            }
+            else{
+                count = 0;
+            }
+            if (count > max){
+                max = count;
+            }
+        }
+        System.out.println (max);
+    }
+}
