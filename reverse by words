@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Solution{
+    public static void main (String [] args){
+        Scanner scn = new Scanner (System.in);
+        String S = scn.nextLine();
+        int n = S.length();
+        String S1 = "";
+        for (int j = 0; j < n; j++){
+            if (S.charAt(j) != ' '){
+                    S1 += S.charAt(j);
+            }
+            if (j == (n - 1)){
+                for (int k = (S1.length() - 1); k >= 0; k--){
+                System.out.print (S1.charAt(k));
+                }
+            }
+            else if (S.charAt(j) == ' '){
+                for (int k = (S1.length() - 1); k >= 0; k--){
+                System.out.print (S1.charAt(k));
+                }
+                S1 = "";
+                System.out.print (' ');
+            }
+            
+        }
+    }
+}
