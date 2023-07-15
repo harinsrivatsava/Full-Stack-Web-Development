@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] w = new int [n];
+        for (int i = 0; i < n; i++){
+            w [i] = scn.nextInt();
+        }
+        int d = scn.nextInt();
+        int l = 0;
+        int h = 0;
+        int ans = -1;
+        for (int ele : w){
+            h += ele;
+            l = Math.max(ele, l);
+        }
+        while (l <= h){
+            int m = (int)(Math.ceil((h - l) * 1.0/ 2) + l);
+            if (LeastWeight(w,d,m)){
+                ans = m;
+                h = m - 1;
+            }
+            else{
+                l = m + 1;
+            }
+        }
+        System.out.println(ans); 
+    }
+    public static boolean LeastWeight(int [] w, int d, int m){
+        int sum = 0;
+        int days = 1;
+        for (int ele : w){
+            if (sum + ele <= m){
+                sum += ele;
+            }
+            else{
+                days++;
+                sum = ele;
+            }
+        }
+        return (days <= d);
+    }
+}
