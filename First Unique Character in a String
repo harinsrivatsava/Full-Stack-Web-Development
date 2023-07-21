@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        String S = scn.next();
+        HashMap <Character, Integer> freq = new HashMap <> ();
+        for (int i = 0; i < S.length(); i++){
+            char key = S.charAt(i);
+            freq.put(key, freq.getOrDefault(key, 0) + 1);
+        }
+        for (int i = 0; i < S.length(); i++){
+            if (freq.get(S.charAt(i)) == 1){
+                System.out.println (i);
+                return;
+            }
+        }
+        System.out.println (-1);
+    }
+}
