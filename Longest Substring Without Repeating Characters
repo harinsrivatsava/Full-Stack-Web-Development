@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        String s = scn.next();
+        HashSet <Character> hs = new HashSet <> ();
+        int i = 0, j = 0, ans = 0;
+        while (i < s.length()){
+            char ch = s.charAt(i);
+            if (hs.contains(ch)){
+                hs.remove(s.charAt((j)));
+                j++;
+            }
+            else{
+                hs.add(ch);
+                i++;
+            }
+            ans = Math.max (hs.size(), ans);
+        }        
+        System.out.println (ans);
+    }
+}
