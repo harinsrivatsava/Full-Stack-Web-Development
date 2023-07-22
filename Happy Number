@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        System.out.println (IsHappy(n));
+    }
+    public static boolean IsHappy (int n){
+        HashSet <Integer> h = new HashSet <> ();
+        while (n != 1 && !h.contains(n)){
+            h.add(n);
+            n = SumOfSquares(n);
+        }
+        return n == 1;
+    }
+    public static int SumOfSquares (int n){
+        int sum = 0;
+        while (n > 0){
+            sum += (n % 10) * (n % 10);
+            n = n/10;
+        }
+        return sum;
+    }
+}
