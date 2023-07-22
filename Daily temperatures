@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            A [i] = scn.nextInt();
+        }
+        int [] ans = nger (A);
+        for (int ele : ans){
+            System.out.print (ele + " ");
+        }
+    }
+    public static int [] nger (int [] A){
+        int n = A.length;
+        int [] ans = new int [n];
+        ans [n - 1] = 0;
+        Stack <Integer> st = new Stack <> ();
+        st.push(n - 1);
+        for (int i = n - 2; i >= 0; i--){
+            while (st.size() != 0 && A[st.peek()] <= A[i]){
+                st.pop();
+            }
+            if (st.size() == 0){
+                ans [i] = 0;
+            }
+            else{
+                ans [i] = st.peek() - i;
+            }
+            st.push(i);
+        }
+        return ans;
+    }
+}
