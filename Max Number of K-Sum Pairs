@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        HashSet <Integer> hs = new HashSet <> ();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            int key = scn.nextInt();
+            hs.add(key);
+            A [i] = key;
+        }
+        int t = scn.nextInt();
+        int count = 0;
+        for (int key : A){
+            int rem = t - key;
+            if (hs.contains(rem)){
+                hs.remove(key);
+                hs.remove(rem);
+                count++;
+            }
+        }
+        System.out.println (count);
+    }
+}
