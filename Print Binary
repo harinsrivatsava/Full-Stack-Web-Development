@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int N = scn.nextInt();
+        Queue <String> qu = new LinkedList <> ();
+        qu.add("1");
+        ArrayList <String> ans = new ArrayList <> ();
+        for (int i = 0; i < N; i++){
+            String rem = qu.remove();
+            ans.add(rem);
+            qu.add(rem + "0");
+            qu.add(rem + "1");
+        }
+        for (String ele : ans){
+            System.out.print (ele + " ");
+        }
+    }
+}
