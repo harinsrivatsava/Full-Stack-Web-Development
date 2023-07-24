@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+        Queue <Integer> qu = new LinkedList <> ();
+        int [] A = new int [n];
+        for (int i = 0; i < n; i++){
+            A [i] = scn.nextInt();
+        }
+        int i = 0;
+        while (i < k){
+            if (A [i] < 0){
+                qu.add(i);
+            }
+            i++;
+        }
+        while (i < n){
+            if (qu.size() == 0){
+                System.out.print(0 + " ");
+            }
+            else{
+                    System.out.print(A[qu.peek()] + " ");
+            }
+            while (qu.size() != 0 && qu.peek() < i - k + 1){
+                qu.remove();
+            }
+            if (A [i] < 0){
+                qu.add(i);
+            }
+            i++;
+        }
+        if (qu.size() == 0){
+            System.out.print(0 + " ");
+        }
+        else{
+            System.out.print(A[qu.peek()] + " ");
+        }
+    }
+}
