@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+        PriorityQueue <Integer> pq = new PriorityQueue <> ((a,b) -> {;
+        return b - a;
+        });
+        for (int i = 0; i < n; i++){
+            int a = scn.nextInt();
+            pq.add(a);
+        }
+        int sum = 0;
+        for (int i = 0; i < k; i++){
+            sum += pq.peek();
+            pq.add(pq.peek() / 2);
+            pq.remove();
+        }
+        System.out.println(sum);
+    }
+}
