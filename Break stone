@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner (System.in);
+        int n = scn.nextInt();
+        PriorityQueue <Integer> pq = new PriorityQueue <> ((a,b) -> {
+            return b - a;
+        });
+        for (int i = 0; i < n; i++){
+            int ele = scn.nextInt();
+            pq.add(ele);
+        }
+
+        while (pq.size() > 1){
+            int r1 = pq.remove();
+            int r2 = pq.remove();
+            pq.add(r1 - r2);
+        }
+        System.out.println (pq.peek());
+    }
+}
